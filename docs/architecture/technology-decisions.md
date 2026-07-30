@@ -348,6 +348,28 @@ Future
 
 ---
 
+## Testing Framework
+
+### Selected
+
+**RSpec**
+
+### Why
+
+RSpec provides a mature, expressive testing framework that is the de facto standard in the Ruby on Rails ecosystem.
+
+It offers:
+
+- Readable test syntax
+- Extensive community support
+- Excellent integration with FactoryBot and Faker
+- Strong ecosystem for request, model, and service testing
+
+### Supporting Libraries
+
+- FactoryBot
+- Faker
+
 # Code Quality
 
 ## Planned
@@ -409,3 +431,4 @@ Major changes should be documented through a new Architecture Decision Record (A
 - Backend Architecture
 - API Design
 - Local Development Guide
+

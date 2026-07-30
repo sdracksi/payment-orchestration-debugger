@@ -1,0 +1,27 @@
+FROM ruby:3.4.7
+
+# Install system dependencies
+RUN apt-get update -qq && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    postgresql-client \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Application directory
+WORKDIR /app
+
+# Install Ruby gems
+COPY Gemfile Gemfile.lock ./
+
+RUN bundle install
+
+# Copy application source
+COPY . .
+
+# Rails server port
+EXPOSE 3000
+
+# Start Rails
+CMD ["bin/rails", "server", "-b", "0.0.0.0"]
