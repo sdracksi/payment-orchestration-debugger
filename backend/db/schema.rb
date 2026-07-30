@@ -10,8 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_30_165119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "transactions", force: :cascade do |t|
+    t.decimal "amount", precision: 10, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.string "currency", null: false
+    t.string "gateway", null: false
+    t.integer "latency_ms", null: false
+    t.string "merchant_name", null: false
+    t.string "merchant_reference"
+    t.string "payment_method", null: false
+    t.datetime "processed_at", null: false
+    t.integer "status", default: 0, null: false
+    t.string "transaction_reference", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gateway"], name: "index_transactions_on_gateway"
+    t.index ["merchant_reference"], name: "index_transactions_on_merchant_reference"
+    t.index ["processed_at"], name: "index_transactions_on_processed_at"
+    t.index ["status"], name: "index_transactions_on_status"
+    t.index ["transaction_reference"], name: "index_transactions_on_transaction_reference", unique: true
+  end
 end
