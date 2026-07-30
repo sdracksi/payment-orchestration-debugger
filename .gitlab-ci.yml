@@ -1,0 +1,51 @@
+stages:
+- validate
+
+default:
+  image: alpine:3.20
+
+validate_repository:
+  stage: validate
+
+  before_script:
+  - apk add --no-cache bash
+
+  script:
+
+  - echo "===================================="
+  - echo "Payment Orchestration Debugger"
+  - echo "Repository Validation"
+  - echo "===================================="
+
+  - echo "Checking repository structure..."
+
+  - test -d backend
+  - test -d frontend
+  - test -d docs
+  - test -d infrastructure
+  - test -d mock-data
+
+  - test -f README.md
+  - test -f LICENSE
+  - test -f CODEOWNERS
+
+  - echo "Repository structure OK"
+
+  - |
+    if [[ "$CI_COMMIT_BRANCH" != "main" &&
+          "$CI_COMMIT_BRANCH" != "develop" &&
+          ! "$CI_COMMIT_BRANCH" =~ ^feature/[a-z0-9-]+$ &&
+          ! "$CI_COMMIT_BRANCH" =~ ^bugfix/[a-z0-9-]+$ &&
+          ! "$CI_COMMIT_BRANCH" =~ ^hotfix/[a-z0-9-]+$ &&
+          ! "$CI_COMMIT_BRANCH" =~ ^release/v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+
+        echo "Invalid branch name."
+
+        exit 1
+
+    fi
+
+  - echo "Branch naming convention passed."
+
+  rules:
+  - if: '$CI_COMMIT_BRANCH'

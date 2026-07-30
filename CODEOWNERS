@@ -1,0 +1,28 @@
+# ==========================================
+# Payment Orchestration Debugger
+# CODEOWNERS
+# ==========================================
+
+# Default Owner
+* @shadracksi
+
+# Documentation
+/docs/ @shadracksi
+
+# Backend API
+/backend/ @shadracksi
+
+# Frontend
+/frontend/ @shadracksi
+
+# Infrastructure
+/infrastructure/ @shadracksi
+
+# Mock Data
+/mock-data/ @shadracksi
+
+# CI/CD
+/.gitlab/ @shadracksi
+
+# GitHub Configuration
+/.github/ @shadracksi
