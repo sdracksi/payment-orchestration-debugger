@@ -1,20 +1,14 @@
 # Feature Request
 
-## Problem
+## Summary
 
-Describe the problem this feature solves.
-
----
-
-## Proposed Solution
-
-Describe the solution.
+Describe the feature.
 
 ---
 
-## Benefits
+## Business Value
 
-Explain how this improves the project.
+Why is this feature important?
 
 ---
 
@@ -24,6 +18,22 @@ Explain how this improves the project.
 
 ---
 
-## Additional Notes
+## Technical Notes
 
-Anything else worth mentioning.
+Describe the expected implementation.
+
+---
+
+## Documentation
+
+- [ ] ADR required
+- [ ] Release Notes updated
+- [ ] Implementation Guide updated
+
+---
+
+## Testing
+
+- [ ] Manual Testing
+- [ ] Unit Tests
+- [ ] Integration Tests
