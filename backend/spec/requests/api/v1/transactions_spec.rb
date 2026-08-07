@@ -1,7 +1,15 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe "Api::V1::Transactions", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+RSpec.describe "Transactions API", type: :request do
+  before do
+    host! "localhost"
+  end
+
+  describe "GET /api/v1/transactions" do
+    it "returns HTTP 200 OK" do
+      get "/api/v1/transactions"
+
+      expect(response).to have_http_status(:ok)
+    end
   end
 end
