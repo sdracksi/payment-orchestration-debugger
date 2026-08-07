@@ -2,7 +2,19 @@
 
 ## Summary
 
-Provide a short description of the bug.
+Describe the issue.
+
+---
+
+## Expected Behavior
+
+Describe what should happen.
+
+---
+
+## Actual Behavior
+
+Describe what actually happens.
 
 ---
 
@@ -14,32 +26,20 @@ Provide a short description of the bug.
 
 ---
 
-## Expected Behaviour
+## Root Cause
 
-Describe what should happen.
-
----
-
-## Actual Behaviour
-
-Describe what actually happened.
+To be completed during investigation.
 
 ---
 
-## Logs or Screenshots
+## Resolution
 
-Attach logs or screenshots if available.
-
----
-
-## Environment
-
-- OS:
-- Browser:
-- Version:
+Describe the implemented fix.
 
 ---
 
-## Additional Information
+## Verification
 
-Add anything else that may help investigate the issue.
+- [ ] Manual Testing
+- [ ] Regression Testing
+- [ ] CI Passed
